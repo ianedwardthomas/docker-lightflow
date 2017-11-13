@@ -1,0 +1,24 @@
+version: "3.0"
+
+services:
+   
+   worker:
+      build: .
+      command: "worker"
+      networks: 
+        - lightflow
+
+   redis:
+      image: redis
+      networks:
+        -  lightflow
+
+   mongo:
+      image: mongo
+      networks: 
+        - lightflow
+
+networks:
+   lightflow:
+        driver: bridge
+ 

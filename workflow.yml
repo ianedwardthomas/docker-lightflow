@@ -1,0 +1,14 @@
+version: "3.0"
+
+services:
+   workflow:
+      build: .
+      entrypoint: "lightflow workflow start parallel"
+      networks: 
+        - lightflow
+
+networks:
+    lightflow:
+     external:
+           name: lightflow_lightflow
+   
